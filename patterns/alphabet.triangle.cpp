@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    int row = 1;
+    while (row <= n)
+    {
+        int col = 1;
+        while (col <= row)
+        {
+
+            char ch = 'A' + row - 1;
+            cout << ch;
+            col = col + 1;
+        };
+        cout << endl;
+        row++;
+    }
+}
+
+
+
+// 5
+// A
+// BB
+// CCC
+// DDDD
+// EEEEE

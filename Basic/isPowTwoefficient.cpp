@@ -1,28 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// bool isPower(int n){
-//     if(n <= 0 || n % 2 != 0) return false;
-//     while(n % 2 == 0)
-//     n /= 2;
-//     return true;
-// }
-
 bool isPowerOfTwo(int n)
 {
+    int ans = 1;
     for (int i = 0; i <= 30; i++)
     {
-        int ans = pow(2, i);
         if (ans == n)
         {
             return true;
         }
+        if (ans < INT_MAX / 2)
+            ans = ans * 2;
     }
     return false;
 }
 int main()
 {
-    if (isPowerOfTwo(1))
+    if (isPowerOfTwo(0))
     {
         cout << "yes,power of 2" << endl;
     }
@@ -31,5 +26,3 @@ int main()
         cout << "false,power of 2" << endl;
     }
 }
-
-// return false on 1 that is wrong

@@ -1,0 +1,343 @@
+ 1️⃣ Binary (Basics)
+🔹 What is Binary?
+Binary uses **only 2 digits**:
+
+0 and 1
+
+Each position is a **power of 2**.
+
+128 64 32 16 8 4 2 1
+
+ Example
+
+1011₂
+= 8 + 2 + 1
+= 11₁₀
+
+🔹 Decimal → Binary (fast way)
+
+Take number → keep dividing by 2 → write remainders → reverse.
+
+Example: `10`
+
+```
+10 / 2 = 5  r 0
+5  / 2 = 2  r 1
+2  / 2 = 1  r 0
+1  / 2 = 0  r 1
+```
+
+➡ Binary = **1010**
+
+Binary table feels hard only because people try to **memorize** it.
+You don’t need that. You need **patterns**.
+
+I’ll show you the **only practical way** to learn it fast.
+
+---
+
+## 🔢 What is a Binary Table?
+
+It’s just **powers of 2**.
+
+| Power | Value |
+| ----- | ----- |
+| 2⁰    | 1     |
+| 2¹    | 2     |
+| 2²    | 4     |
+| 2³    | 8     |
+| 2⁴    | 16    |
+| 2⁵    | 32    |
+| 2⁶    | 64    |
+| 2⁷    | 128   |
+| 2⁸    | 256   |
+| 2⁹    | 512   |
+| 2¹⁰   | 1024  |
+
+That’s it. No magic.
+
+---
+
+## 🧠 Golden Rule (MOST IMPORTANT)
+
+> **Each next value = previous × 2**
+
+Example:
+
+```
+1 → 2 → 4 → 8 → 16 → 32 → 64 → 128
+```
+
+If you know **one**, you know all.
+
+---
+
+## 🔥 Learn using Left Shift (programmer trick)
+
+In binary:
+
+```
+1 << 0 = 1
+1 << 1 = 2
+1 << 2 = 4
+1 << 3 = 8
+1 << 4 = 16
+```
+
+So:
+
+```
+2ⁿ = 1 << n
+```
+
+This is why binary is EASY for coders.
+
+---
+
+## 👀 Visual way (binary positions)
+
+```
+128  64  32  16  8  4  2  1
+ 1    0    1    0   1  0  0  1
+```
+
+👉 Just add the columns where `1` exists.
+
+Example:
+
+10101001₂
+= 128 + 32 + 8 + 1
+= 16
+
+ 2️⃣ Complement (VERY IMPORTANT)
+
+🔹 1’s Complement
+
+Just **flip bits**.
+
+```
+0 → 1
+1 → 0
+```
+
+Example:
+
+```
+1010 → 0101
+```
+
+---
+
+## 🔹 2’s Complement (used in computers)
+
+### Rule:
+2’s complement = (1’s complement) + 1
+Example:
+
+Number: 5
+Binary: 0101
+
+1’s complement → 1010
+Add 1           → 1011
+➡ `1011` represents **-5**
+🔥 This is how **negative numbers** are stored.
+🧠 Shortcut
+
+~n  =  -(n + 1)
+
+Example:
+
+~5 = -6
+In a computer, the number 5 is stored as a series of bits. For simplicity, let's look at it in an 8-bit format:Decimal 5 in binary is: 00000101When we apply NOT (~), every bit flips: 11111010In the Two's Complement system (which C++ uses), any binary number starting with a 1 is negative. The specific pattern 11111010 represents -6.🔍 Seeing the PatternLet's look at a few examples side-by-side to see if we can spot the "off-by-one" relationship:
+
+Decimaln,   Binary n,     Flipped Bits (~n),       Resulting Decimal
+0,          00000000,         11111111                 ,-1
+1,          00000001          ,11111110,                 -2
+2,          00000010,         11111101,                  -3
+
+ 3️⃣ Set Bits (Count of 1s)
+
+🔹 What are Set Bits?
+
+Bits that are **1**.
+
+Example:
+
+```
+101101
+Set bits = 4
+```
+
+---
+
+ 🔹 Best Trick (DSA GOLD)
+
+```cpp
+while(n > 0) {
+    n = n & (n - 1);
+    count++;
+}
+```
+
+Each step removes **one set bit**.
+
+### Example:
+
+```
+n = 12 (1100)
+n-1 = 11 (1011)
+n&(n-1) = 1000
+```
+
+---
+
+## 🔹 Power of 2 Check
+
+Only ONE set bit.
+
+cpp
+n & (n - 1) == 0
+
+
+
+# 4️⃣ Binary (Bitwise) Operators
+
+## 🔹 AND (`&`)
+
+```
+1 & 1 = 1
+else  = 0
+```
+
+Example:
+
+```
+5 & 3
+101
+011
+---
+001 → 1
+```
+
+Used for:
+
+* Checking even/odd
+* Masking bits
+
+---
+
+## 🔹 OR (`|`)
+
+```
+1 | 0 = 1
+0 | 1 = 1
+```
+
+Example:
+
+```
+5 | 3
+101
+011
+---
+111 → 7
+```
+
+---
+
+## 🔹 XOR (`^`)
+
+```
+Same → 0
+Different → 1
+```
+
+Example:
+
+```
+5 ^ 3
+101
+011
+---
+110 → 6
+```
+
+🔥 Special properties:
+
+```
+x ^ x = 0
+x ^ 0 = x
+```
+
+Used in:
+
+* Swapping numbers
+* Finding unique element
+
+---
+
+## 🔹 NOT (`~`)
+
+Flips all bits.
+
+```
+~5 = -6
+```
+
+Because:
+
+```
+~n = -(n+1)
+```
+
+---
+
+## 🔹 Left Shift (`<<`)
+
+Shifts left → **multiply by 2**
+
+```
+n << k = n × 2ᵏ
+```
+
+Example:
+
+```
+5 << 1 = 10
+5 << 2 = 20
+```
+
+---
+
+## 🔹 Right Shift (`>>`)
+
+Shifts right → **divide by 2**
+
+```
+n >> 1 = n / 2
+```
+
+Example:
+
+```
+10 >> 1 = 5
+```
+
+---
+
+# 🔥 One-Page Memory Sheet
+
+| Concept  | Meaning     |       |
+| -------- | ----------- | ----- |
+| Binary   | Base-2      |       |
+| 1’s comp | Flip bits   |       |
+| 2’s comp | Flip + 1    |       |
+| Set bits | Count of 1s |       |
+| `&`      | Both 1      |       |
+| `        | `           | Any 1 |
+| `^`      | Different   |       |
+| `~`      | Invert      |       |
+| `<<`     | ×2          |       |
+| `>>`     | ÷2          |       |
+
+

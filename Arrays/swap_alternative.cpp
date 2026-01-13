@@ -31,7 +31,7 @@ void alternativeSwap(int arr[], int size)
 int main()
 {
 
-    int arr[] = {3, 5, 6, 7, 8, 9, 12, 5};
+    int arr[] = {3, 5, 6, 7, 8, 9, 12,5};
     int size = sizeof(arr) / sizeof(arr[0]);
 
     alternativeSwap(arr, size);
@@ -45,3 +45,5 @@ int main()
 
 
 // 5 3 7 6 9 8 5 12 %   
+
+

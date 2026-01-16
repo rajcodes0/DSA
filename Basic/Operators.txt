@@ -6,9 +6,7 @@ Bitwise operators **work directly on those bits**.
 Think of bits as **lights**:
 
  `1` = ON 💡
- `0` = OFF ⬛
-
----
+ `0` = OFF0
 
 # 1️⃣ LEFT SHIFT (`<<`) — *“Move bits to the left”*
 
@@ -16,9 +14,7 @@ Think of bits as **lights**:
 
 > **Left shift means pushing all bits to the left and adding zeros on the right.**
 
-Each left move **doubles** the number.
-
----
+Each left move **doubles** the numbe0
 
 ### Example
 
@@ -48,9 +44,7 @@ So:
 
 ```
 x << n  =  x × 2ⁿ
-```
-
----
+`0
 
 # 2️⃣ RIGHT SHIFT (`>>`) — *“Move bits to the right”*
 
@@ -58,9 +52,7 @@ x << n  =  x × 2ⁿ
 
 > **Right shift means pushing all bits to the right and dropping bits from the end.**
 
-Each right move **halves** the number.
-
----
+Each right move **halves** the numbe0
 
 ### Example
 
@@ -90,9 +82,7 @@ So:
 
 ```
 x >> n  =  x ÷ 2ⁿ
-```
-
----
+`0
 
 # 3️⃣ AND (`&`) — *“Both must be ON”*
 
@@ -100,7 +90,7 @@ x >> n  =  x ÷ 2ⁿ
 
 > Result bit is **1 only if BOTH bits are 1**
 
----
+
 
 ### Example
 
@@ -110,8 +100,7 @@ cout << (5 & 3);
 
 ```
 5 = 101
-3 = 011
----------
+3 = 0
     001
 ```
 
@@ -124,17 +113,13 @@ cout << (5 & 3);
 ```cpp
 if (n & 1) cout << "Odd";
 else cout << "Even";
-```
-
----
+`0
 
 # 4️⃣ OR (`|`) — *“At least one ON”*
 
 ### In English:
 
-> Result bit is **1 if ANY bit is 1**
-
----
+> Result bit is **1 if ANY bit is 10
 
 ### Example
 
@@ -144,22 +129,17 @@ cout << (5 | 3);
 
 ```
 5 = 101
-3 = 011
----------
+3 = 0
     111
 ```
 
-👉 Result = **7**
-
----
+👉 Result = **70
 
 # 5️⃣ XOR (`^`) — *“Different = ON”*
 
 ### In English:
 
-> If bits are **same → 0**, **different → 1**
-
----
+> If bits are **same → 0**, **different → 10
 
 ### Example
 
@@ -169,8 +149,7 @@ cout << (5 ^ 3);
 
 ```
 5 = 101
-3 = 011
----------
+3 = 0
     110
 ```
 
@@ -183,17 +162,13 @@ x ^ x = 0
 x ^ 0 = x
 ```
 
-Used to find **unique number** in array.
-
----
+Used to find **unique number** in arra0
 
 # 6️⃣ NOT (`~`) — *“Flip everything”*
 
 ### In English:
 
-> Turns **1 → 0** and **0 → 1**
-
----
+> Turns **1 → 0** and **0 → 10
 
 ### Example
 
@@ -212,8 +187,7 @@ Why?
 
 # 🧠 One-line memory rules
 
-| Operator | Think like this      |             |
-| -------- | -------------------- | ----------- |
+| Operator | Think like this      |             0-0-0-- |
 | `<<`     | Move left → multiply |             |
 | `>>`     | Move right → divide  |             |
 | `&`      | Both true            |             |

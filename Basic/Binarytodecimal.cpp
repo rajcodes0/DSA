@@ -8,7 +8,7 @@ int decimaltobinary(int decNum){
     while (decNum >0){
         int rem = decNum % 2;
         decNum /= 2;
-        ans += (rem +power);
+        ans += (rem * power);
         power = power * 10;
     }
     return ans;

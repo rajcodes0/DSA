@@ -168,7 +168,7 @@ Used to find **unique number** in arra0
 
 ### In English:
 
-> Turns **1 → 0** and **0 → 10
+> Turns **1 → 0** and **0 → 1
 
 ### Example
 

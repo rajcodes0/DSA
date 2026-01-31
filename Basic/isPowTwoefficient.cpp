@@ -17,7 +17,7 @@ bool isPowerOfTwo(int n)
 }
 int main()
 {
-    if (isPowerOfTwo(0))
+    if (isPowerOfTwo(24))
     {
         cout << "yes,power of 2" << endl;
     }

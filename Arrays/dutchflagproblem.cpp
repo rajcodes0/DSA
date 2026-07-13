@@ -1,3 +1,8 @@
+
+#include <bits/stdc++.h>
+using namespace std;    
+
+
 void sort012(vector<int>& arr) {
     int c0 = 0, c1 = 0, c2 = 0;
 
@@ -12,4 +17,18 @@ void sort012(vector<int>& arr) {
     while (c0--) arr[i++] = 0;
     while (c1--) arr[i++] = 1;
     while (c2--) arr[i++] = 2;
+}
+
+int main(){
+    
+    vector<int> arr = {0, 1, 2, 0, 1, 2, 0, 1, 2};
+
+    sort012(arr);
+
+    for (int x : arr) {
+        cout << x << " ";
+    }
+    cout << endl;
+
+    return 0;
 }

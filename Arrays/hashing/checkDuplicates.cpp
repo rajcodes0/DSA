@@ -19,7 +19,7 @@ int main() {
         cout<<"Duplicates found"<<endl;
     }
     else{
-        cout<<"No duplicates found"<<endl;
+        cout<<"No duplicates found in thsi oo"<<endl;
     }
     return 0;
 }

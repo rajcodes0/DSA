@@ -10,7 +10,7 @@ bool hasDuplicates(vector<int>& arr){
             return true;
         }
         mp[num]++;
-    }
+    }   
     return false;
 }
 int main() {

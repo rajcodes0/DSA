@@ -23,6 +23,24 @@ int closer(int m,int n){
     
 }
 
+
+int gapless(int m ,int n){
+    int q = n/m;
+
+    int n1 = m * q;
+
+    int n2 = (n  * m) > 0 ? (m *(q + 1)) : (m * (q-1));
+
+    if(abs(n - n1) < abs(n- n2)){
+        return n1;
+    }
+
+return n2;
+
+
+
+}
+
 int main(){
     int m;
     cin >> m;
@@ -30,6 +48,8 @@ int main(){
     cin>> n;
 
     closer(m,n);
+    cout << gapless(m ,n ) << endl;
+    return 0;
     
 }
     

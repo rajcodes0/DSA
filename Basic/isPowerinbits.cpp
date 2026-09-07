@@ -15,6 +15,39 @@ int main() {
 }
 
 
+#include <iostream>
+using namespace std;
+
+// C++ program to check whether a number
+// can be expressed as sum of consecutive numbers
+bool isSumOfConsecutive(int n)
+{
+
+    // 1 cannot be represented
+    if (n == 1)
+    {
+        return false;
+    }
+
+    // Check if n is power of 2
+    if ((n & (n - 1)) == 0)
+    {
+        return false;
+    }
+
+    return true;
+}
+
+// Driver code
+int main()
+{
+    int n = 10;
+    if (isSumOfConsecutive(n))
+        cout << "true";
+    else
+        cout << "false";
+    return 0;
+}
 
 // Binary understanding (VERY IMPORTANT)
 
